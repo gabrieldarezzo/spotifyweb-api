@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    var defer = new Promise((resolve, reject) => {
+
+      setTimeout(() => {
+        if(true) {
+          resolve('Hello world');
+        } else {
+          reject('Error!');
+        }
+      }, 2000);
+    });
+
+    defer
+      .then((data) => {
+        console.log(data);
+        return 'foo';
+
+      })
+      .then((data) => {
+        console.log('segundo chaning ->', data);
+      })
+
+      .catch((error) => console.log(error))
+      ;
+  </script>
+</body>
+</html>

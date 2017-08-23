@@ -24,9 +24,14 @@
   },
   "homepage": "https://github.com/gabrieldarezzo/js-tdd-course#readme",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015-native-modules": "^6.9.4",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
-    "husky": "^0.14.3"
+    "husky": "^0.14.3",
+    "ramda": "^0.24.1",
+    "webpack": "^3.0.0-rc.2"
   }
 }
