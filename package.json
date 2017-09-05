@@ -2,8 +2,12 @@
   "name": "js-tdd-course",
   "version": "1.0.0",
   "description": "lib de JS com TDD",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "clear": "rimraf lib",
+    "buildx": "./node_modules/.bin/babel --out-dir lib src",
+    "build": "npm run clear && npm run buildx",
+    "build:watch": "npm run buildx -- --watch ",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "test": "./node_modules/.bin/mocha tests/**/*.js --require babel-register",
     "prepush": "npm run lint",
@@ -11,8 +15,13 @@
     "test:coverage": "nyc npm test"
   },
   "nyc": {
-    "reporter": ["text", "html"],
-    "exclude": ["tests/**"]
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -30,6 +39,7 @@
   },
   "homepage": "https://github.com/gabrieldarezzo/js-tdd-course#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
@@ -39,10 +49,18 @@
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
+    "express": "^4.15.4",
     "husky": "^0.14.3",
     "mocha": "^3.5.0",
+    "node-fetch": "^1.7.2",
     "nyc": "^11.1.0",
+    "querystring": "^0.2.0",
     "ramda": "^0.24.1",
+    "request": "^2.81.0",
+    "rimraf": "^2.6.1",
+    "sinon": "^3.2.1",
+    "sinon-chai": "^2.13.0",
+    "sinon-stub-promise": "^4.0.0",
     "webpack": "^3.0.0-rc.2"
   }
 }

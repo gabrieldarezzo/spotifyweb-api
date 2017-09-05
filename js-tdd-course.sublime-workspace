@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"e",
+				"expect"
+			],
+			[
 				"Ro",
 				"Router\talias"
 			],
@@ -216,28 +220,20 @@
 	"buffers":
 	[
 		{
-			"file": "src/main.js",
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "package.json",
 			"settings":
 			{
-				"buffer_size": 1389,
+				"buffer_size": 1535,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "node_modules/chai/lib/chai/interface/expect.js",
+			"file": "src/main.js",
 			"settings":
 			{
-				"buffer_size": 767,
+				"buffer_size": 213,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -245,7 +241,7 @@
 			"file": "tests/main.spec.js",
 			"settings":
 			{
-				"buffer_size": 707,
+				"buffer_size": 1078,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -396,13 +392,13 @@
 	},
 	"expanded_folders":
 	[
-		"/C/wamp64/www/js-tdd-course",
-		"/C/wamp64/www/js-tdd-course/_src",
-		"/C/wamp64/www/js-tdd-course/src",
-		"/C/wamp64/www/js-tdd-course/tests"
+		"/C/xampp/htdocs/js-tdd-course"
 	],
 	"file_history":
 	[
+		"/C/xampp/htdocs/js-tdd-course/node_modules/chai/lib/chai/interface/expect.js",
+		"/C/xampp/htdocs/spotify-wrapper/tests/main.spec.js",
+		"/C/xampp/htdocs/spotify-wrapper/src/main.js",
 		"/C/wamp64/www/js-tdd-course/tests/main.spec.js",
 		"/C/wamp64/www/js-tdd-course/package.json",
 		"/C/wamp64/www/js-tdd-course/src/buzz.js",
@@ -527,14 +523,11 @@
 		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/meu-primeiro/meu-primeiro.component.ts",
 		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/cursos/cursos.service.ts",
 		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/cursos/cursos.component.ts",
-		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/cursos/cursos.component.html",
-		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/cursos/cursos.module.ts",
-		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/cursos/cursos.component.css",
-		"/C/xampp/htdocs/colorizzar/src/Colorizzar/Color/BlueGreen.php"
+		"/C/xampp/htdocs/loiane-angular2/primeiro-projeto/src/app/cursos/cursos.component.html"
 	],
 	"find":
 	{
-		"height": 72.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -708,31 +701,32 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/main.js",
+					"file": "package.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1535,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								522,
+								522
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (NPM).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
@@ -741,31 +735,32 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "package.json",
+					"file": "src/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1389,
+						"buffer_size": 213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								645,
-								645
+								213,
+								213
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (NPM).sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true,
 							"trim_trailing_white_space_on_save": true
@@ -779,56 +774,24 @@
 				},
 				{
 					"buffer": 2,
-					"file": "node_modules/chai/lib/chai/interface/expect.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 767,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								144,
-								144
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"trim_trailing_white_space_on_save": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "tests/main.spec.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 707,
+						"buffer_size": 1078,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								327,
-								327
+								843,
+								843
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
 							"editorconfig": true,
 							"ensure_newline_at_eof_on_save": true,
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
@@ -837,7 +800,7 @@
 							"trim_trailing_white_space_on_save": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -848,7 +811,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -885,7 +848,7 @@
 	"project": "js-tdd-course.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -894,6 +857,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"pack",
+				"package.json"
+			],
 			[
 				"pac",
 				"package.json"
@@ -1141,10 +1108,6 @@
 			[
 				"datab",
 				"src\\app\\data-bind\\data-bind.component.html"
-			],
-			[
-				"pack",
-				"package.json"
 			],
 			[
 				"boots",

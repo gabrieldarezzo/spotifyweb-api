@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Por que não faz sentido apanhar pra NodeJs</title>
+</head>
+<body>
+    
+
+<script>      
+
+    const spotifyApi = 'https://api.spotify.com/v1/search?q=Metallica&type=album';
+    const tokenSpotify = 'BQAvjxcsfH1K8RGpzJzj7u5gJPVH--qIT7whHq-ksgt9VFc3bd_3Ro2SdcWSJU9uoy4RMUhCl-bXcJdbdVKWgyNmCRwkXNAWzlpmvQ9wxDK7mU_Oalcv1YN9yX79MjgXDmF386TCxWe0RctpsVnLWw';    
+    const ajax = new XMLHttpRequest();                      
+
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState == XMLHttpRequest.DONE ) {
+            if (ajax.status == 200) {
+                const json = JSON.parse(ajax.responseText);
+                console.log(json);
+            }
+        }
+    };
+
+
+
+    ajax.open('GET', spotifyApi, true);    
+    ajax.setRequestHeader("Content-Type", "application/json");
+    ajax.setRequestHeader("Authorization", 'Bearer ' + tokenSpotify);
+    ajax.send();
+
+
+</script>
+</body>
+</html>
