@@ -8,9 +8,11 @@
     "buildx": "./node_modules/.bin/babel --out-dir lib src",
     "build": "npm run clear && npm run buildx",
     "build:watch": "npm run buildx -- --watch ",
+    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper-umd.js",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper-umd.min.js -p",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "test": "./node_modules/.bin/mocha tests/**/*.js --require babel-register",
-    "prepush": "npm run lint",
+
     "lint": "./node_modules/.bin/eslint src/*.js",
     "test:coverage": "nyc npm test"
   },
@@ -61,6 +63,6 @@
     "sinon": "^3.2.1",
     "sinon-chai": "^2.13.0",
     "sinon-stub-promise": "^4.0.0",
-    "webpack": "^3.0.0-rc.2"
+    "webpack": "^3.5.5"
   }
 }

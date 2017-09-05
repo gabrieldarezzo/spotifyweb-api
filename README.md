@@ -6,6 +6,10 @@ eslint não funcinou no windows...
 .\node_modules\.bin\eslint src\*.js
 ```
 
+```
+"prepush": "npm run lint",
+```
+
 
 
 One Paragraph of project description goes here
