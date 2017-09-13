@@ -1,4 +1,7 @@
-# Spotify Wrapper
+# Spotify Wrapper  
+
+[![Build Status](https://travis-ci.org/gabrieldarezzo/js-tdd-course.svg?branch=master)](https://travis-ci.org/gabrieldarezzo/js-tdd-course)
+
 
 
 One Paragraph of project description goes here
