@@ -11,11 +11,7 @@ sinonStubPromise(sinon);
 global.fetch = require('node-fetch');
 
 
-
-
-
 describe('Search', () => {
-
   let fetchStub;
   let promise;
 
@@ -52,9 +48,7 @@ describe('Search', () => {
   });
 
 
-
   describe('Generic Search', () => {
-
     it('should call fetch function', () => {
       const artists = search();
       expect(fetchStub).to.have.been.calledOnce;
@@ -62,17 +56,13 @@ describe('Search', () => {
 
 
     it('should receive the correct url', () => {
-
       context('passing one type - artist', () => {
-
         const artists = search('Incubus', 'artist');
         expect(fetchStub).to.have.been
           .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
-
       });
 
       context('passing one type - album', () => {
-
         const albums = search('Incubus', 'album');
 
         expect(fetchStub).to.have.been
@@ -85,13 +75,10 @@ describe('Search', () => {
         expect(fetchStub).to.have.been
           .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist,album');
       });
-
     });
-
   });
 
   describe('searchArtists', () => {
-
     it('should call fetch function', () => {
       const artists = searchArtists('Incubus');
       expect(fetchStub).to.have.been.calledOnce;
@@ -104,11 +91,9 @@ describe('Search', () => {
       const artists2 = searchArtists('Metallica');
       expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Metallica&type=artist');
     });
-
   });
 
   describe('searchAlbums', () => {
-
     it('should call fetch function', () => {
       searchAlbums('Incubus');
       expect(fetchStub).to.have.been.calledOnce;
@@ -121,12 +106,10 @@ describe('Search', () => {
       const album2 = searchAlbums('Metallica');
       expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Metallica&type=album');
     });
-
   });
 
 
   describe('searchTracks', () => {
-
     it('should call fetch function', () => {
       searchTracks('Incubus');
       expect(fetchStub).to.have.been.calledOnce;
@@ -139,12 +122,10 @@ describe('Search', () => {
       const tracks2 = searchTracks('Metallica');
       expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Metallica&type=track');
     });
-
   });
 
-  //searchPlaylists
+  // searchPlaylists
   describe('searchPlaylists', () => {
-
     it('should call fetch function', () => {
       searchPlaylists('Incubus');
       expect(fetchStub).to.have.been.calledOnce;
@@ -157,21 +138,6 @@ describe('Search', () => {
       const playlist2 = searchPlaylists('Metallica');
       expect(fetchStub).to.have.been.calledWith('https://api.spotify.com/v1/search?q=Metallica&type=playlist');
     });
-
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
 

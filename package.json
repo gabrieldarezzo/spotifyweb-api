@@ -10,11 +10,13 @@
     "build:watch": "npm run buildx -- --watch ",
     "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper-umd.js",
     "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper-umd.min.js -p",
+    "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require babel-register --watch",
     "test": "./node_modules/.bin/mocha tests/**/*.js --require babel-register",
-
     "lint": "./node_modules/.bin/eslint src/*.js",
-    "test:coverage": "nyc npm test"
+    "linttest": "./node_modules/.bin/eslint tests/*.js",
+    "test:coverage": "nyc npm test",
+    "prepush": "npm run lint"
   },
   "nyc": {
     "reporter": [
@@ -49,8 +51,10 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.1",
     "eslint": "^4.5.0",
-    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
     "express": "^4.15.4",
     "husky": "^0.14.3",
     "mocha": "^3.5.0",

@@ -5,29 +5,60 @@
     <title>Por que não faz sentido apanhar pra NodeJs</title>
 </head>
 <body>
-    
 
-<script>      
+<div id="albums">
 
-    const spotifyApi = 'https://api.spotify.com/v1/search?q=Metallica&type=album';
-    const tokenSpotify = 'BQAvjxcsfH1K8RGpzJzj7u5gJPVH--qIT7whHq-ksgt9VFc3bd_3Ro2SdcWSJU9uoy4RMUhCl-bXcJdbdVKWgyNmCRwkXNAWzlpmvQ9wxDK7mU_Oalcv1YN9yX79MjgXDmF386TCxWe0RctpsVnLWw';    
-    const ajax = new XMLHttpRequest();                      
+</div>
 
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState == XMLHttpRequest.DONE ) {
-            if (ajax.status == 200) {
-                const json = JSON.parse(ajax.responseText);
-                console.log(json);
-            }
-        }
-    };
+<script>
+
+    function getAlbumsPromise(method, url) {
+        return new Promise(function (resolve, reject) {
+            const tokenSpotify = 'BQAornj1UpDeQHVnbJ9TcPHiLd9QRK8ADcCTd1QRvDdkwnUT1Pb8XeMDKc_ZMatpmmLMLFdv3qeiV0zck0AghdFSgbTBjmOWa0SNQenOkCk-Ldrp5kReVq8lZ6-LnXtVXOCZJsNv8uZZhNqGmU_Iqg';
+            const xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == XMLHttpRequest.DONE ) {
+                    if (xhr.status == 200) {
+                        resolve(JSON.parse(xhr.responseText));
+                    } else {
+
+                        reject({
+                          status: this.status,
+                          statusText: xhr.statusText
+                        });
+                    }
+                }
+            };
 
 
 
-    ajax.open('GET', spotifyApi, true);    
-    ajax.setRequestHeader("Content-Type", "application/json");
-    ajax.setRequestHeader("Authorization", 'Bearer ' + tokenSpotify);
-    ajax.send();
+            xhr.open('GET', url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.setRequestHeader("Authorization", 'Bearer ' + tokenSpotify);
+            xhr.send()
+        });
+    }
+
+
+    const albumsEl = document.getElementById('albums');
+
+    getAlbumsPromise('GET', 'https://api.spotify.com/v1/search?q=Metallica&type=album')
+        .then((data) => {
+            const markup = data.albums.items.map(item =>
+                `<img src="${item.images[0].url}" alt="item.name" />`
+            ).join('');
+            //console.log(markup);
+
+            albumsEl.innerHTML = markup;
+
+
+        })
+        .catch((err) => {
+          console.error('Augh, there was an error!', err);
+        });
+
+
 
 
 </script>
