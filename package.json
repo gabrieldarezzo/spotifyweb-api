@@ -16,7 +16,7 @@
     "lint": "./node_modules/.bin/eslint src/*.js",
     "linttest": "./node_modules/.bin/eslint tests/*.js",
     "test:coverage": "nyc npm test",
-    "coveralls": "npm run test:coverage && nyc report --reporter=lcov test | coveralls",
+    "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "prepush": "npm run lint"
   },
   "nyc": {
@@ -52,6 +52,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.1",
     "coveralls": "^2.13.1",
+    "cross-env": "^5.0.5",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",

@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/gabrieldarezzo/js-tdd-course.svg?branch=master)](https://travis-ci.org/gabrieldarezzo/js-tdd-course)
 
+[![Coverage Status](https://coveralls.io/repos/github/gabrieldarezzo/js-tdd-course/badge.svg?branch=master)](https://coveralls.io/github/gabrieldarezzo/js-tdd-course?branch=master)
+
 
 
 One Paragraph of project description goes here
