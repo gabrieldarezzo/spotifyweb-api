@@ -5,7 +5,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/gabrieldarezzo/js-tdd-course/badge.svg?branch=master)](https://coveralls.io/github/gabrieldarezzo/js-tdd-course?branch=master)
 
 
-
+ 
 One Paragraph of project description goes here
 
 ## Getting Started
