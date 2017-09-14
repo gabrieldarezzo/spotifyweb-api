@@ -1,7 +1,9 @@
-import { API_URL, TOKEN_API } from './config';
-// import { toJSON } from './utils';
+/* global fetch */
 import album from './album';
 import search from './search';
+
+import { API_URL, TOKEN_API } from './config';
+import toJSON from './utils';
 
 export default class SpotifyWrapper {
   constructor(options) {
@@ -21,6 +23,6 @@ export default class SpotifyWrapper {
       },
     };
 
-    return fetch(urlParam, headers);
+    return fetch(urlParam, headers).then(toJSON);
   }
 }
