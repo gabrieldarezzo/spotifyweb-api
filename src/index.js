@@ -1,41 +1,26 @@
 import { API_URL, TOKEN_API } from './config';
+// import { toJSON } from './utils';
+import album from './album';
+import search from './search';
 
-
-import {
-  search,
-  searchArtists,
-  searchAlbums,
-  searchTracks,
-  searchPlaylists,
-} from './search';
-
-
-import {
-  getAlbum,
-  getAlbums,
-  getAlbumTracks,
-} from './album';
-
-// module.exports = {
-//   search,
-//   searchArtists,
-//   searchAlbums,
-//   searchTracks,
-//   searchPlaylists,
-//   getAlbum,
-//   getAlbums,
-//   getAlbumTracks,
-// };
-
-export class SpotifyWrapper {
+export default class SpotifyWrapper {
   constructor(options) {
     this.apiURL = options.apiURL || API_URL;
     this.token = options.token || TOKEN_API;
+
+    this.album = album.bind(this)();
+    this.search = search.bind(this)();
   }
 
-  request(url) {
-    return fetch(url);
+  // class-methods-use-this ???
+  request(urlParam) { // eslint-disable-line
 
+    const headers = {
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+      },
+    };
+
+    return fetch(urlParam, headers);
   }
-
 }

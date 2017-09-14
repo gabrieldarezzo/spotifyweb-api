@@ -3,7 +3,7 @@ import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import sinonStubPromise from 'sinon-stub-promise';
 
-import { getAlbum, getAlbums, getAlbumTracks } from '../src/album';
+import SpotifyWrapper from '../src/index';
 
 
 chai.use(sinonChai);
@@ -12,10 +12,14 @@ global.fetch = require('node-fetch');
 
 
 describe('Album', () => {
+  let spotify;
   let fetchStub;
   let promise;
 
   beforeEach(() => {
+    spotify = new SpotifyWrapper({
+      token: 'foo',
+    });
     fetchStub = sinon.stub(global, 'fetch');
     promise = fetchStub.returnsPromise();
   });
@@ -27,40 +31,40 @@ describe('Album', () => {
 
   describe('smoke tests', () => {
     it('should exist the getAlbum method', () => {
-      expect(getAlbum).to.exist;
+      expect(spotify.album.getAlbum).to.exist;
     });
 
 
     it('should exist the getAlbums method', () => {
-      expect(getAlbums).to.exist;
+      expect(spotify.album.getAlbums).to.exist;
     });
 
     it('should exist the getAlbumTracks method', () => {
-      expect(getAlbumTracks).to.exist;
+      expect(spotify.album.getTracks).to.exist;
     });
   });
 
 
   describe('getAlbum', () => {
     it('should call fetch function', () => {
-      getAlbum();
+      spotify.album.getAlbum();
       expect(fetchStub).to.have.been.calledOnce;
     });
 
     it('should call fetch with the correct URL', () => {
-      getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
+      spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
       expect(fetchStub).to.have.been
         .calledWith('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy');
 
 
-      getAlbum('4aawyAB9vmqN3uQ7FjRGTyi');
+      spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTyi');
       expect(fetchStub).to.have.been
         .calledWith('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTyi');
     });
 
     it('should return correct data from Promise', () => {
       promise.resolves({ album: 'name' });
-      const album = getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
+      const album = spotify.album.getAlbum('4aawyAB9vmqN3uQ7FjRGTy');
       expect(album.resolveValue).to.be.eql({ album: 'name' });
     });
   });
@@ -68,12 +72,12 @@ describe('Album', () => {
 
   describe('getAlbums', () => {
     it('should call fetch function', () => {
-      const artists = getAlbums();
+      spotify.album.getAlbums();
       expect(fetchStub).to.have.been.calledOnce;
     });
 
     it('should call fetch with the correct URL', () => {
-      getAlbums(['4aawyAB9vmqN3uQ7FjRGTy', '4aawyAB9vmqN3uQ7FjRGTy']);
+      spotify.album.getAlbums(['4aawyAB9vmqN3uQ7FjRGTy', '4aawyAB9vmqN3uQ7FjRGTy']);
 
       expect(fetchStub).to.have.been
         .calledWith('https://api.spotify.com/v1/albums/?ids=4aawyAB9vmqN3uQ7FjRGTy,4aawyAB9vmqN3uQ7FjRGTy');
@@ -81,20 +85,20 @@ describe('Album', () => {
 
     it('should return correct data from Promise', () => {
       promise.resolves({ album: 'name' });
-      const album = getAlbums(['4aawyAB9vmqN3uQ7FjRGTy', '4aawyAB9vmqN3uQ7FjRGTy']);
+      const album = spotify.album.getAlbums(['4aawyAB9vmqN3uQ7FjRGTy', '4aawyAB9vmqN3uQ7FjRGTy']);
       expect(album.resolveValue).to.be.eql({ album: 'name' });
     });
   });
 
 
-  describe('getAlbumTracks', () => {
+  describe('getTracks', () => {
     it('should call fetch function', () => {
-      const artists = getAlbumTracks();
+      spotify.album.getTracks();
       expect(fetchStub).to.have.been.calledOnce;
     });
 
     it('should call fetch with the correct URL', () => {
-      getAlbumTracks('4aawyAB9vmqN3uQ7FjRGTy');
+      spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy');
 
       expect(fetchStub).to.have.been
         .calledWith('https://api.spotify.com/v1/albums/4aawyAB9vmqN3uQ7FjRGTy/tracks');
@@ -102,7 +106,7 @@ describe('Album', () => {
 
     it('should return correct data from Promise', () => {
       promise.resolves({ album: 'name' });
-      const album = getAlbumTracks('4aawyAB9vmqN3uQ7FjRGTy');
+      const album = spotify.album.getTracks('4aawyAB9vmqN3uQ7FjRGTy');
       expect(album.resolveValue).to.be.eql({ album: 'name' });
     });
   });
