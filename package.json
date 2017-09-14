@@ -2,7 +2,7 @@
   "name": "js-tdd-course",
   "version": "1.0.2",
   "description": "lib de JS com TDD",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clear": "rimraf lib",
     "buildx": "./node_modules/.bin/babel --out-dir lib src",
@@ -19,6 +19,10 @@
     "coveralls": "npm run test:coverage && nyc report --reporter=text-lcov | coveralls",
     "prepush": "npm run lint"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "nyc": {
     "reporter": [
       "text",

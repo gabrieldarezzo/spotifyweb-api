@@ -8,5 +8,18 @@
 
 
   <script src="../dist/spotify-wrapper-umd.js"></script>
+  <script>
+
+    const albums = spotifyWrapper.searchAlbums('Metallica');
+
+    albums
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
+    ;
+
+  </script>
+
+
+
 </body>
 </html>

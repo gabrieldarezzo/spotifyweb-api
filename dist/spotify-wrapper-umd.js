@@ -83,8 +83,15 @@ return /******/ (function(modules) { // webpackBootstrap
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var API_URL = 'https://api.spotify.com/v1';
-exports.default = API_URL;
+var TOKEN_API = 'BQCgnuKJBVf5PZcyPWBkaMVIZ4-ImOa5jg33lcCL4I0qj-AiAYayCfLRSSZYmt6GhQD4HEb1FCcX0e5c9voSVUSy2Vzv37porEZ-3jRF5VNCZDtm5V2XZJylF4YwOAYRzHToxE60mcCpuOCaPcGRwA';
+
+var API_URL = exports.API_URL = 'https://api.spotify.com/v1';
+
+var HEADERS = exports.HEADERS = {
+  headers: {
+    Authorization: 'Bearer ' + TOKEN_API
+  }
+};
 
 /***/ }),
 /* 1 */
@@ -137,24 +144,20 @@ exports.searchPlaylists = exports.searchTracks = exports.searchAlbums = exports.
 
 var _config = __webpack_require__(0);
 
-var _config2 = _interopRequireDefault(_config);
-
 var _utils = __webpack_require__(1);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 var search = exports.search = function search(query, type) {
-  return fetch(_config2.default + '/search?q=' + query + '&type=' + type).then(_utils.toJSON);
+  return fetch(_config.API_URL + '/search?q=' + query + '&type=' + type, _config.HEADERS).then(_utils.toJSON);
 };
 // .catch(err => console.log(err))
 
 /*
 .catch((err) => {
   console.log(err);
-   console.error(query, type);
+    console.error(query, type);
   console.error(err.toString());
   console.error(`${API_URL}/search?q=${query}&type=${type}`);
- })
+  })
 */
 
 var searchArtists = exports.searchArtists = function searchArtists(query) {
@@ -186,24 +189,20 @@ exports.getAlbumTracks = exports.getAlbums = exports.getAlbum = undefined;
 
 var _config = __webpack_require__(0);
 
-var _config2 = _interopRequireDefault(_config);
-
 var _utils = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /* global fetch */
 
 var getAlbum = exports.getAlbum = function getAlbum(album) {
-  return fetch(_config2.default + '/albums/' + album).then(_utils.toJSON);
+  return fetch(_config.API_URL + '/albums/' + album, _config.HEADERS).then(_utils.toJSON);
 };
 
 var getAlbums = exports.getAlbums = function getAlbums(ids) {
-  return fetch(_config2.default + '/albums/?ids=' + ids).then(_utils.toJSON);
+  return fetch(_config.API_URL + '/albums/?ids=' + ids, _config.HEADERS).then(_utils.toJSON);
 };
 
 var getAlbumTracks = exports.getAlbumTracks = function getAlbumTracks(id) {
-  return fetch(_config2.default + '/albums/' + id + '/tracks').then(_utils.toJSON);
+  return fetch(_config.API_URL + '/albums/' + id + '/tracks', _config.HEADERS).then(_utils.toJSON);
 };
 
 /***/ })
