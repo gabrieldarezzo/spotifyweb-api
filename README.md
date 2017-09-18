@@ -1,8 +1,8 @@
 # Spotify Wrapper  
 
-[![Build Status](https://travis-ci.org/gabrieldarezzo/js-tdd-course.svg?branch=master)](https://travis-ci.org/gabrieldarezzo/js-tdd-course)
+[![Build Status](https://travis-ci.org/gabrieldarezzo/spotifyweb-api.svg?branch=master)](https://travis-ci.org/gabrieldarezzo/spotifyweb-api)
 
-[![Coverage Status](https://coveralls.io/repos/github/gabrieldarezzo/js-tdd-course/badge.svg?branch=master)](https://coveralls.io/github/gabrieldarezzo/js-tdd-course?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/gabrieldarezzo/spotifyweb-api/badge.svg?branch=master)](https://coveralls.io/github/gabrieldarezzo/spotifyweb-api?branch=master)
 
 
  
